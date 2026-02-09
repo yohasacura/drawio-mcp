@@ -9,6 +9,21 @@ description = "MCP server for creating draw.io diagrams as XML files"
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.11"
+authors = [
+    { name = "yohasacura", email = "yohasacura@users.noreply.github.com" },
+]
+keywords = ["mcp", "drawio", "diagrams", "model-context-protocol", "draw-io", "mcp-server"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Scientific/Engineering :: Visualization",
+]
 dependencies = [
     "mcp[cli]>=1.0.0",
 ]
@@ -20,6 +35,7 @@ drawio-mcp = "drawio_mcp.server:main"
 Homepage = "https://github.com/yohasacura/drawio-mcp"
 Repository = "https://github.com/yohasacura/drawio-mcp"
 Issues = "https://github.com/yohasacura/drawio-mcp/issues"
+Changelog = "https://github.com/yohasacura/drawio-mcp/blob/main/CHANGELOG.md"
 
 [dependency-groups]
 dev = [

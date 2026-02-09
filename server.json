@@ -1,17 +1,17 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.yohasacura/drawio-mcp",
-  "description": "Create and edit draw.io / diagrams.net XML files with AI — flowcharts, UML, ER, C4, architecture, network diagrams, and more.",
+  "description": "MCP server for creating and editing draw.io / diagrams.net XML files programmatically.",
   "repository": {
     "url": "https://github.com/yohasacura/drawio-mcp",
     "source": "github"
   },
-  "version": "1.0.1",
+  "version": "1.0.2",
   "packages": [
     {
       "registryType": "pypi",
       "identifier": "drawio-mcp",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "transport": {
         "type": "stdio"
       }

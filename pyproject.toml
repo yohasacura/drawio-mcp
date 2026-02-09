@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "drawio-mcp"
-version = "1.0.0"
+version = "1.0.1"
 description = "MCP server for creating draw.io diagrams as XML files"
 readme = "README.md"
 license = { text = "MIT" }

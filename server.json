@@ -1,50 +1,20 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.yohasacura/drawio-mcp",
-  "display_name": "Draw.io MCP Server",
   "description": "Create and edit draw.io / diagrams.net XML files with AI — flowcharts, UML, ER, C4, architecture, network diagrams, and more.",
   "repository": {
     "url": "https://github.com/yohasacura/drawio-mcp",
-    "source": "github",
-    "id": "yohasacura/drawio-mcp"
+    "source": "github"
   },
-  "version_detail": {
-    "version": "1.0.0"
-  },
+  "version": "1.0.0",
   "packages": [
     {
-      "registry_name": "pypi",
-      "name": "drawio-mcp",
+      "registryType": "pypi",
+      "identifier": "drawio-mcp",
       "version": "1.0.0",
-      "runtime": "python",
-      "runtime_hint": {
-        "key": "python",
-        "value": ">=3.11"
-      },
-      "environment_variables": []
-    }
-  ],
-  "remotes": [],
-  "tools": [
-    {
-      "name": "diagram",
-      "description": "Lifecycle management: create, save, load, import_xml, list, get_xml, add_page, add_layer"
-    },
-    {
-      "name": "draw",
-      "description": "Content operations: add_vertices, add_edges, add_group, update_cells, delete_cells, add_title, add_legend, build_dag, build_full"
-    },
-    {
-      "name": "style",
-      "description": "Appearance management: build, apply_theme, list_vertex_presets, list_edge_presets, list_themes"
-    },
-    {
-      "name": "layout",
-      "description": "Positioning and layout: sugiyama, tree, horizontal, vertical, grid, flowchart, smart_connect, align, distribute, polish, relayout, compact, reroute_edges, resolve_overlaps, fix_labels, resize_container"
-    },
-    {
-      "name": "inspect",
-      "description": "Read-only inspection: cells, overlaps, ports, info"
+      "transport": {
+        "type": "stdio"
+      }
     }
   ]
 }

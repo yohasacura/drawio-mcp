@@ -56,16 +56,15 @@ jobs:
 
       - name: Install mcp-publisher
         run: |
-          curl -fsSL https://registry.modelcontextprotocol.io/install.sh | bash
-          echo "$HOME/.mcp-publisher/bin" >> $GITHUB_PATH
+          curl -L "https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_$(uname -s | tr '[:upper:]' '[:lower:]')_$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/').tar.gz" | tar xz mcp-publisher
 
       - name: Authenticate with MCP Registry
-        run: mcp-publisher login github-oidc
+        run: ./mcp-publisher login github-oidc
 
-      - name: Set version from tag
+      - name: Set version in server.json
         run: |
-          TAG_VERSION=${GITHUB_REF#refs/tags/v}
-          mcp-publisher version set "$TAG_VERSION"
+          VERSION=${GITHUB_REF#refs/tags/v}
+          jq --arg v "$VERSION" '.version = $v | .packages[0].version = $v' server.json > server.tmp && mv server.tmp server.json
 
       - name: Publish to MCP Registry
-        run: mcp-publisher publish
+        run: ./mcp-publisher publish

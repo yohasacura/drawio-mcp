@@ -43,3 +43,28 @@ jobs:
 
       - name: Publish package distributions to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
+
+  mcp-registry-publish:
+    name: Publish to MCP Registry
+    needs: pypi-publish
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install mcp-publisher
+        run: |
+          curl -fsSL https://registry.modelcontextprotocol.io/install.sh | bash
+          echo "$HOME/.mcp-publisher/bin" >> $GITHUB_PATH
+
+      - name: Authenticate with MCP Registry
+        run: mcp-publisher login github-oidc
+
+      - name: Set version from tag
+        run: |
+          TAG_VERSION=${GITHUB_REF#refs/tags/v}
+          mcp-publisher version set "$TAG_VERSION"
+
+      - name: Publish to MCP Registry
+        run: mcp-publisher publish
